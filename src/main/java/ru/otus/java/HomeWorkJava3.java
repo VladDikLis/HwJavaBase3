@@ -139,6 +139,6 @@ public class HomeWorkJava3 {
             }
 
         }
-        System.out.println("Сумма: " + x);
+        System.out.println("Сумма:  " + x);
     }
-}
+} // end
