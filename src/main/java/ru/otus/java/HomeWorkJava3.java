@@ -22,11 +22,11 @@ public class HomeWorkJava3 {
             System.out.println("Выбран метод sumOfPositiveElements.");
             int[][] arr = new int[3][3];
             System.out.println("Исходный массив: ");
-            for (int j=0; j < 3; j++) {
-                for (int i=0; i < 3; i++) {
-                    arr[j][i] = (int) ((Math.random() - Math.random()) * 10);
+            for (int i=0; i < 3; i++) {
+                for (int j=0; j < 3; j++) {
+                    arr[i][j] = (int) ((Math.random() - Math.random()) * 10);
                 }
-                System.out.println(Arrays.toString(arr[j]));
+                System.out.println(Arrays.toString(arr[i]));
             }
             sumOfPositiveElements(arr);
         }
@@ -41,15 +41,16 @@ public class HomeWorkJava3 {
 
         if (me == 3) {
             System.out.println("Выбран метод diagMass.");
-            int[][] arr = new int[3][3];
+            int a = 5;
+            int[][] arr = new int[a][a];
             System.out.println("Исходный массив: ");
-            for (int j=0; j < 3; j++) {
-                for (int i=0; i < 3; i++) {
-                    arr[j][i] = (int) ((Math.random() - Math.random()) * 10);
+            for (int i=0; i < a; i++) {
+                for (int j=0; j < a; j++) {
+                    arr[i][j] = (int) ((Math.random() - Math.random()) * 10);
                 }
-                System.out.println(Arrays.toString(arr[j]));
+                System.out.println(Arrays.toString(arr[i]));
             }
-            diagMass(arr);
+            diagMass(arr, a);
         }
 
         if (me == 4) {
@@ -102,23 +103,22 @@ public class HomeWorkJava3 {
         }
     }
 
-    public static void diagMass(int[][] arr) {
-        for (int j=0; j < 3; j++) {
+    public static void diagMass(int[][] arr, int a) {
+        for (int j=0; j < a; j++) {
             arr[j][j] = 0;
             }
-
-        System.out.println("Исходный массив: ");
-        for (int j=0; j < 3; j++) {
+        System.out.println("Итоговый массив: ");
+        for (int j=0; j < a; j++) {
             System.out.println(Arrays.toString(arr[j]));
         }
         }
 
     public static void findMax(int[][] arr) {
-        int x = 0;
-        for (int j=0; j < 3; j++) {
-            for (int i=0; i < 3; i++) {
-                if (arr[j][i] > x) {
-                    x = arr[j][i];
+        int x = arr[0][0];
+        for (int i=0; i < 3; i++) {
+            for (int j=0; j < arr[i].length; j++) {
+                if (arr[i][j] > x) {
+                    x = arr[i][j];
                 }
             }
 
